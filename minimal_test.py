@@ -31,10 +31,9 @@ def minimal_test():
                 
         traci.close()
         print("Success!")
-
-        traci.close()
-        print("Success!")
         
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     minimal_test()
