@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,500.00,200.00" origBoundary="0.00,0.00,500.00,200.00"/>
+
+    <!-- Nodes (junctions) -->
+    <node id="west" x="0.00" y="50.00" type="priority"/>
+    <node id="A" x="100.00" y="50.00" type="traffic_light"/>
+    <node id="B" x="350.00" y="50.00" type="traffic_light"/>
+    <node id="east" x="500.00" y="50.00" type="priority"/>
+    <node id="northA" x="100.00" y="100.00" type="priority"/>
+    <node id="southA" x="100.00" y="0.00" type="priority"/>
+    <node id="northB" x="350.00" y="100.00" type="priority"/>
+    <node id="southB" x="350.00" y="0.00" type="priority"/>
+
+    <!-- Edges (roads) -->
+    <!-- Main corridor -->
+    <edge id="west_in" from="west" to="A" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="A_to_B" from="A" to="B" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="B_to_east" from="B" to="east" priority="1" numLanes="1" speed="13.9"/>
+
+    <!-- Side connections for A -->
+    <edge id="northA_in" from="northA" to="A" priority="1" numLanes="1" speed="10"/>
+    <edge id="A_to_northA" from="A" to="northA" priority="1" numLanes="1" speed="10"/>
+    <edge id="southA_in" from="southA" to="A" priority="1" numLanes="1" speed="10"/>
+    <edge id="A_to_southA" from="A" to="southA" priority="1" numLanes="1" speed="10"/>
+
+    <!-- Side connections for B -->
+    <edge id="northB_in" from="northB" to="B" priority="1" numLanes="1" speed="10"/>
+    <edge id="B_to_northB" from="B" to="northB" priority="1" numLanes="1" speed="10"/>
+    <edge id="southB_in" from="southB" to="B" priority="1" numLanes="1" speed="10"/>
+    <edge id="B_to_southB" from="B" to="southB" priority="1" numLanes="1" speed="10"/>
+
+    <!-- Connections at intersection A -->
+    <connection from="west_in" to="A_to_B" fromLane="0" toLane="0"/>
+    <connection from="west_in" to="A_to_northA" fromLane="0" toLane="0"/>
+    <connection from="west_in" to="A_to_southA" fromLane="0" toLane="0"/>
+    
+    <connection from="northA_in" to="A_to_B" fromLane="0" toLane="0"/>
+    <connection from="northA_in" to="A_to_southA" fromLane="0" toLane="0"/>
+    
+    <connection from="southA_in" to="A_to_B" fromLane="0" toLane="0"/>
+    <connection from="southA_in" to="A_to_northA" fromLane="0" toLane="0"/>
+
+    <!-- Connections at intersection B -->
+    <connection from="A_to_B" to="B_to_east" fromLane="0" toLane="0"/>
+    <connection from="A_to_B" to="B_to_northB" fromLane="0" toLane="0"/>
+    <connection from="A_to_B" to="B_to_southB" fromLane="0" toLane="0"/>
+    
+    <connection from="northB_in" to="B_to_east" fromLane="0" toLane="0"/>
+    <connection from="northB_in" to="B_to_southB" fromLane="0" toLane="0"/>
+    
+    <connection from="southB_in" to="B_to_east" fromLane="0" toLane="0"/>
+    <connection from="southB_in" to="B_to_northB" fromLane="0" toLane="0"/>
+
+</net>

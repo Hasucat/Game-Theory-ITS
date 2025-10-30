@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="13.9"/>
+    <vType id="truck" accel="1.3" decel="4.5" sigma="0.5" length="10" maxSpeed="10" probability="0.2"/>
+
+    <!-- Multiple routes for continuous traffic -->
+    <route id="west_to_east" edges="west_in A_to_B B_to_east"/>
+    <route id="northA_to_east" edges="northA_in A_to_B B_to_east"/>
+    <route id="southA_to_east" edges="southA_in A_to_B B_to_east"/>
+    <route id="west_to_northB" edges="west_in A_to_B B_to_northB"/>
+    <route id="west_to_southB" edges="west_in A_to_B B_to_southB"/>
+    <route id="northA_to_southB" edges="northA_in A_to_B B_to_southB"/>
+    <route id="southA_to_northB" edges="southA_in A_to_B B_to_northB"/>
+
+    <!-- Continuous flows with different rates -->
+    <flow id="flow1" type="car" route="west_to_east" begin="0" end="3600" period="5"/>
+    <flow id="flow2" type="car" route="northA_to_east" begin="0" end="3600" period="8"/>
+    <flow id="flow3" type="car" route="southA_to_east" begin="0" end="3600" period="10"/>
+    <flow id="flow4" type="car" route="west_to_northB" begin="0" end="3600" period="12"/>
+    <flow id="flow5" type="car" route="west_to_southB" begin="0" end="3600" period="15"/>
+    <flow id="flow6" type="truck" route="west_to_east" begin="0" end="3600" period="30"/>
+
+</routes>

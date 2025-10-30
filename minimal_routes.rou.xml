@@ -1,0 +1,5 @@
+<routes>
+    <vType id="car" length="5"/>
+    <route id="r1" edges="west_in A_to_B B_to_east2"/>
+    <vehicle id="v0" type="car" route="r1" depart="0"/>
+</routes>

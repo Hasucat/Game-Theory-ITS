@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <node id="west" x="0" y="50" type="priority"/>
+    <node id="A" x="100" y="50" type="traffic_light"/>
+    <node id="B" x="250" y="50" type="traffic_light"/> 
+    <node id="east" x="400" y="50" type="priority"/>
+    <node id="northA" x="100" y="100" type="priority"/>
+    <node id="southA" x="100" y="0" type="priority"/>
+    <node id="northB" x="250" y="100" type="priority"/>
+    <node id="southB" x="250" y="0" type="priority"/>
+</nodes>
